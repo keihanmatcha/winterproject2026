@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CAST & STAFF | Seiren Musical Project</title>
+  <title>MUSIC & SETLIST | Seiren Musical Project</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,9 +15,10 @@
       <nav class="global-nav">
         <ul class="nav-list">
           <li><a href="main.html">HOME</a></li>
-          <li><a href="cast-staff.html" class="active">CAST & STAFF</a></li>
+          <li><a href="cast-staff.html">CAST & STAFF</a></li>
           <li><a href="schedule-ticket.html">SCHEDULE & TICKET</a></li>
-          <li><a href="music.html">MUSIC</a></li>
+          <!-- 必要に応じて MUSIC リンクをナビに追加する場合 -->
+          <li><a href="music.html" class="active">MUSIC</a></li>
           <li><a href="access.html">ACCESS</a></li>
           <li><a href="qa-attention.html">Q&A / ATTENTION</a></li>
           <li><a href="main.html#contact" class="btn-contact">CONTACT</a></li>
@@ -29,48 +30,58 @@
   <main>
     <div class="page-header">
       <div class="container">
-        <h2><span class="en">CAST & STAFF</span><span class="ja">キャスト・スタッフ</span></h2>
+        <h2><span class="en">MUSIC &amp; SETLIST</span><span class="ja">楽曲・セットリスト</span></h2>
       </div>
     </div>
 
-    <!-- キャスト一覧 -->
-    <section class="section cast-section">
+    <!-- 楽曲・セットリスト一覧 -->
+    <section class="section music-section">
       <div class="container">
-        <h3 class="subsection-title">CAST</h3>
-        <div class="cast-grid">
-          <div class="cast-card">
-            <div class="cast-img"><img src="images/cast01.jpg" alt="役名 / 出演者名"></div>
-            <p class="role-name">役名 A</p>
-            <p class="actor-name">（キャスト名を入力）</p>
-          </div>
-          <div class="cast-card">
-            <div class="cast-img"><img src="images/cast02.jpg" alt="役名 / 出演者名"></div>
-            <p class="role-name">役名 B</p>
-            <p class="actor-name">（キャスト名を入力）</p>
-          </div>
-          <!-- 出演人数に合わせてカード部分を複製 -->
-        </div>
-      </div>
-    </section>
+        <h3 class="subsection-title">SETLIST</h3>
 
-    <!-- スタッフ一覧 (winterindex.pdfより反映) -->
-    <section class="section staff-section">
-      <div class="container">
-        <h3 class="subsection-title">STAFF</h3>
-        
-        <div class="staff-group">
-          <dl class="creator-list">
-            <dt>脚本・演出</dt>
-            <dd>（スタッフ名）</dd>
-            <dt>音楽監督</dt>
-            <dd>（スタッフ名）</dd>
-            <dt>振付</dt>
-            <dd>（スタッフ名）</dd>
-            <dt>舞台監督</dt>
-            <dd>（スタッフ名）</dd>
-          </dl>
-        </div>
+        <div class="music-list-container">
+          
+          <!-- 楽曲カード1 -->
+          <div class="music-card">
+            <div class="music-info">
+              <span class="track-number">M1</span>
+              <h4 class="track-title">楽曲タイトル（例：オープニングテーマ）</h4>
+              <dl class="track-credits">
+                <dt>原曲</dt>
+                <dd>○○○○</dd>
+                <dt>作詞</dt>
+                <dd>○○ ○○</dd>
+                <dt>作曲・編曲</dt>
+                <dd>○○ ○○</dd>
+              </dl>
+            </div>
+            <!-- Spotify 埋め込みプレイヤー -->
+            <div class="spotify-embed">
+              <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/xxxxx?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+          </div>
 
+          <!-- 楽曲カード2 -->
+          <div class="music-card">
+            <div class="music-info">
+              <span class="track-number">M2</span>
+              <h4 class="track-title">劇中歌タイトル</h4>
+              <dl class="track-credits">
+                <dt>原曲</dt>
+                <dd>○○○○</dd>
+                <dt>作詞・作曲</dt>
+                <dd>○○ ○○</dd>
+              </dl>
+            </div>
+            <!-- Spotify 埋め込みプレイヤー -->
+            <div class="spotify-embed">
+              <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/yyyyy?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+          </div>
+
+          <!-- 曲数に応じて .music-card ごと複製してください -->
+
+        </div>
       </div>
     </section>
   </main>
