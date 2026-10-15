@@ -88,18 +88,30 @@ a:hover {
   gap: 20px;
 }
 
+/* style.css に追加・調整 */
 .nav-list a {
   color: #d1d5db;
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.5px;
   padding: 5px 0;
-  position: relative;
+  position: relative; /* 下線の位置基準にするため */
 }
 
+/* ホバー時、またはアクティブ（現在地）のときの色・下線 */
 .nav-list a:hover,
 .nav-list a.active {
   color: var(--accent-color);
+}
+/* 選択されているときに下線（斜線風、またはシンプルなライン）を引く場合の一例 */
+.nav-list a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-color);
 }
 
 .nav-list a.btn-contact {
