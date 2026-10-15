@@ -1,0 +1,483 @@
+@charset "UTF-8";
+
+/* ==========================================
+   1. 基本設定 & 変数
+   ========================================== */
+:root {
+  --primary-color: #1a2530;       /* ダークネイビー（ヘッダー・重厚感） */
+  --accent-color: #c99c52;        /* ゴールド・ブロンズ（アクセント） */
+  --accent-hover: #b0843a;
+  --bg-color: #fcfcfc;            /* 背景色（オフホワイト） */
+  --card-bg: #ffffff;             /* カード背景 */
+  --text-color: #333333;          /* 本文テキスト */
+  --text-muted: #666666;          /* 補足テキスト */
+  --border-color: #e2e8f0;        /* 境界線 */
+  --font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", MeiRyo, sans-serif;
+  --max-width: 1000px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+.container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ==========================================
+   2. ヘッダー & ナビゲーション
+   ========================================== */
+.header {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.header-container {
+  width: 92%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.site-title a {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-list a {
+  color: #d1d5db;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 5px 0;
+  position: relative;
+}
+
+.nav-list a:hover,
+.nav-list a.active {
+  color: var(--accent-color);
+}
+
+.nav-list a.btn-contact {
+  background-color: var(--accent-color);
+  color: #ffffff !important;
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+.nav-list a.btn-contact:hover {
+  background-color: var(--accent-hover);
+}
+
+/* ==========================================
+   3. メインビジュアル & ページヘッダー
+   ========================================== */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(26, 37, 48, 0.9)), 
+              url('images/main-visual.jpg') center/cover no-repeat;
+  min-height: 80vh; /* 画面の高さの80%以上確保 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero h2, .section-title .en, .site-title {
+  font-family: "Shippori Mincho", "Yu Mincho", "游明朝", serif;
+}
+
+.hero .catchphrase {
+  font-size: 1.1rem;
+  color: var(--accent-color);
+  font-weight: 300;
+}
+
+.page-header {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 40px 0;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.page-header h2 .en {
+  display: block;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  color: var(--accent-color);
+}
+
+.page-header h2 .ja {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 400;
+  margin-top: 5px;
+  opacity: 0.8;
+}
+
+/* ==========================================
+   4. セクション共通要素
+   ========================================== */
+.section {
+  padding: 60px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.section-title,
+.subsection-title {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.section-title .en,
+.subsection-title {
+  display: block;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  color: var(--primary-color);
+}
+
+.section-title .ja {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--accent-color);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* ボタンデザイン */
+.btn-area, .btn-area-group {
+  text-align: center;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.link-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.link-btn.primary {
+  background-color: var(--accent-color);
+}
+
+.link-btn.primary:hover {
+  background-color: var(--accent-hover);
+}
+
+.link-btn.large {
+  padding: 16px 40px;
+  font-size: 1rem;
+}
+
+/* ==========================================
+   5. 各ページコンテンツスタイル
+   ========================================== */
+
+/* --- お知らせ (INFO) --- */
+.info-list {
+  list-style: none;
+}
+
+.info-list li {
+  padding: 15px 0;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.info-list .date {
+  font-weight: bold;
+  color: var(--accent-color);
+  margin-right: 15px;
+}
+
+/* --- 定義リスト（概要・主要スタッフ） --- */
+.creator-list, .outline-list, .ticket-details {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 15px 10px;
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.creator-list dt, .outline-list dt, .ticket-details dt {
+  font-weight: bold;
+  color: var(--primary-color);
+  border-left: 3px solid var(--accent-color);
+  padding-left: 8px;
+}
+
+/* --- キャストグリッド (CAST) --- */
+.cast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 25px;
+}
+
+.cast-card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding-bottom: 15px;
+}
+.cast-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.cast-img {
+  width: 100%;
+  height: 240px;
+  background-color: #e5e7eb;
+  margin-bottom: 12px;
+}
+
+.cast-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.role-name {
+  font-size: 0.8rem;
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.actor-name {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 2px;
+}
+
+/* --- スタッフ一覧 (STAFF) --- */
+.staff-group {
+  margin-bottom: 35px;
+}
+
+.staff-group h4 {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.staff-list {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 10px;
+}
+
+/* --- タイムテーブル (SCHEDULE) --- */
+.timetable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: var(--card-bg);
+  text-align: center;
+}
+
+.timetable th, .timetable td {
+  border: 1px solid var(--border-color);
+  padding: 12px;
+}
+
+.timetable th {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.timetable-notes {
+  list-style: none;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+
+/* --- チケット注意事項 (TICKET) --- */
+.ticket-caution, .attention-box {
+  background-color: #f3f4f6;
+  padding: 25px;
+  border-radius: 8px;
+  margin-top: 30px;
+}
+
+.ticket-caution h4, .attention-box h4 {
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.ticket-caution ul, .attention-box ul {
+  padding-left: 20px;
+  font-size: 0.9rem;
+}
+
+/* --- Q&A --- */
+.qa-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.qa-list dt {
+  font-weight: bold;
+  font-size: 1.05rem;
+  margin-top: 20px;
+  color: var(--primary-color);
+}
+
+.qa-list dt .q {
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  margin-right: 8px;
+}
+
+.qa-list dd {
+  margin-top: 5px;
+  padding-left: 24px;
+  color: var(--text-color);
+}
+
+.qa-list dd .a {
+  color: #e53e3e;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+/* ==========================================
+   6. フッター
+   ========================================== */
+.footer {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 40px 0 20px;
+  margin-top: 60px;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 20px;
+}
+
+.footer-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.footer-nav a {
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+
+.footer-nav a:hover {
+  color: #ffffff;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* ==========================================
+   7. レスポンシブ対応 (モバイル・タブレット)
+   ========================================== */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 15px;
+  }
+
+  .creator-list, .outline-list, .ticket-details, .staff-list {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .creator-list dt, .outline-list dt, .ticket-details dt {
+    margin-top: 10px;
+  }
+
+  .cast-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
+  }
+
+  .cast-img {
+    height: 170px;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    text-align: center;
+  }
+}
