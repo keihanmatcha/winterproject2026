@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -7,16 +6,21 @@
   <title>MUSIC | Seiren Musical Project</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="music-page">
+
+  <!-- 背景演出 -->
+  <div class="music-bg">
+    <div class="watercolor-layer layer-1"></div>
+    <div class="watercolor-layer layer-2"></div>
+    <div class="watercolor-layer layer-3"></div>
+    <div class="sparkle-layer"></div>
+    <div class="feather-layer"></div>
+  </div>
 
   <!-- ヘッダー / グローバルナビゲーション -->
   <header class="header">
     <div class="header-container">
-      <h1 class="site-title">
-        <a href="https://www.seiren-musical-project.com/">
-          Seiren Musical Project
-        </a>
-      </h1>
+      <h1 class="site-title"><a href="https://www.seiren-musical-project.com/">Seiren Musical Project</a></h1>
       <nav class="global-nav">
         <ul class="nav-list">
           <li><a href="index.html">TOP</a></li>
@@ -32,30 +36,25 @@
   </header>
 
   <main>
-
-    <!-- ページタイトル -->
-    <div class="page-header">
+    <div class="page-header music-page-header">
       <div class="container">
         <h2>
           <span class="en">MUSIC &amp; SETLIST</span>
-          <span class="ja">楽曲担当者</span>
         </h2>
       </div>
     </div>
 
-    <!-- セットリスト -->
     <section class="section music-section">
       <div class="container">
-
         <h3 class="subsection-title">SETLIST</h3>
 
         <div class="music-list-container">
 
-          <!-- M1 -->
-          <article class="music-card">
+          <!-- 序盤 -->
+          <article class="music-card stage-start" data-stage="start">
             <div class="music-card-header">
               <h4 class="track-title">M1</h4>
-              <span class="track-label">MUSICAL NUMBER</span>
+              <span class="track-label">OPENING COLOR</span>
             </div>
             <dl class="track-credits">
               <dt>訳詞</dt><dd>篠塚琉那</dd>
@@ -64,11 +63,10 @@
             </dl>
           </article>
 
-          <!-- M2 -->
-          <article class="music-card">
+          <article class="music-card stage-start" data-stage="start">
             <div class="music-card-header">
               <h4 class="track-title">M2</h4>
-              <span class="track-label">MUSICAL NUMBER</span>
+              <span class="track-label">OPENING COLOR</span>
             </div>
             <dl class="track-credits">
               <dt>訳詞</dt><dd>江藤帆乃</dd>
@@ -77,11 +75,10 @@
             </dl>
           </article>
 
-          <!-- M3 -->
-          <article class="music-card">
+          <article class="music-card stage-start" data-stage="start">
             <div class="music-card-header">
               <h4 class="track-title">M3</h4>
-              <span class="track-label">MUSICAL NUMBER</span>
+              <span class="track-label">OPENING COLOR</span>
             </div>
             <dl class="track-credits">
               <dt>訳詞</dt><dd>上田智佳未</dd>
@@ -90,11 +87,11 @@
             </dl>
           </article>
 
-          <!-- M4 -->
-          <article class="music-card">
+          <!-- 中盤 -->
+          <article class="music-card stage-middle" data-stage="middle">
             <div class="music-card-header">
               <h4 class="track-title">M4</h4>
-              <span class="track-label">MUSICAL NUMBER</span>
+              <span class="track-label">WATERCOLOR SPREAD</span>
             </div>
             <dl class="track-credits">
               <dt>訳詞</dt><dd>松本望未</dd>
@@ -103,11 +100,10 @@
             </dl>
           </article>
 
-          <!-- M5 -->
-          <article class="music-card">
+          <article class="music-card stage-middle" data-stage="middle">
             <div class="music-card-header">
               <h4 class="track-title">M5</h4>
-              <span class="track-label">MUSICAL NUMBER</span>
+              <span class="track-label">WATERCOLOR SPREAD</span>
             </div>
             <dl class="track-credits">
               <dt>訳詞</dt><dd>山﨑咲良</dd>
@@ -116,11 +112,10 @@
             </dl>
           </article>
 
-          <!-- M6 -->
-          <article class="music-card">
+          <article class="music-card stage-middle" data-stage="middle">
             <div class="music-card-header">
               <h4 class="track-title">M6</h4>
-              <span class="track-label">MUSICAL NUMBER</span>
+              <span class="track-label">WATERCOLOR SPREAD</span>
             </div>
             <dl class="track-credits">
               <dt>訳詞</dt><dd>森川葵衣</dd>
@@ -129,11 +124,10 @@
             </dl>
           </article>
 
-          <!-- M7 -->
-          <article class="music-card">
+          <article class="music-card stage-middle" data-stage="middle">
             <div class="music-card-header">
               <h4 class="track-title">M7</h4>
-              <span class="track-label">MUSICAL NUMBER</span>
+              <span class="track-label">WATERCOLOR SPREAD</span>
             </div>
             <dl class="track-credits">
               <dt>訳詞</dt><dd>江藤帆乃</dd>
@@ -142,11 +136,10 @@
             </dl>
           </article>
 
-          <!-- M8 -->
-          <article class="music-card">
+          <article class="music-card stage-middle" data-stage="middle">
             <div class="music-card-header">
               <h4 class="track-title">M8</h4>
-              <span class="track-label">MUSICAL NUMBER</span>
+              <span class="track-label">WATERCOLOR SPREAD</span>
             </div>
             <dl class="track-credits">
               <dt>訳詞</dt><dd>なし</dd>
@@ -155,11 +148,10 @@
             </dl>
           </article>
 
-          <!-- M9 -->
-          <article class="music-card">
+          <article class="music-card stage-middle" data-stage="middle">
             <div class="music-card-header">
               <h4 class="track-title">M9</h4>
-              <span class="track-label">MUSICAL NUMBER</span>
+              <span class="track-label">WATERCOLOR SPREAD</span>
             </div>
             <dl class="track-credits">
               <dt>訳詞</dt><dd>一ノ宮凛乃</dd>
@@ -168,11 +160,11 @@
             </dl>
           </article>
 
-          <!-- M11 -->
-          <article class="music-card">
+          <!-- 終盤 -->
+          <article class="music-card stage-final" data-stage="final">
             <div class="music-card-header">
               <h4 class="track-title">M11</h4>
-              <span class="track-label">MUSICAL NUMBER</span>
+              <span class="track-label">RAINBOW BLOOM</span>
             </div>
             <dl class="track-credits">
               <dt>訳詞</dt><dd>山田結奈</dd>
@@ -181,11 +173,10 @@
             </dl>
           </article>
 
-          <!-- M12 -->
-          <article class="music-card">
+          <article class="music-card stage-final" data-stage="final">
             <div class="music-card-header">
               <h4 class="track-title">M12</h4>
-              <span class="track-label">MUSICAL NUMBER</span>
+              <span class="track-label">RAINBOW BLOOM</span>
             </div>
             <dl class="track-credits">
               <dt>訳詞</dt><dd>中山璃子</dd>
@@ -194,11 +185,10 @@
             </dl>
           </article>
 
-          <!-- M13 -->
-          <article class="music-card">
+          <article class="music-card stage-final" data-stage="final">
             <div class="music-card-header">
               <h4 class="track-title">M13</h4>
-              <span class="track-label">MUSICAL NUMBER</span>
+              <span class="track-label">RAINBOW BLOOM</span>
             </div>
             <dl class="track-credits">
               <dt>訳詞</dt><dd>飯田</dd>
@@ -207,11 +197,10 @@
             </dl>
           </article>
 
-          <!-- M14 -->
-          <article class="music-card">
+          <article class="music-card stage-final" data-stage="final">
             <div class="music-card-header">
               <h4 class="track-title">M14</h4>
-              <span class="track-label">MUSICAL NUMBER</span>
+              <span class="track-label">RAINBOW BLOOM</span>
             </div>
             <dl class="track-credits">
               <dt>訳詞</dt><dd>猪股柊</dd>
@@ -223,7 +212,6 @@
         </div>
       </div>
     </section>
-
   </main>
 
   <!-- フッター -->
@@ -248,5 +236,6 @@
     </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
