@@ -3,50 +3,18 @@
 /* ==========================================
    1. 基本設定 & 変数
    ========================================== */
-
 :root {
-  /* メインカラー：明るい青空 */
-  --primary-color: #7DADE2;
-
-  /* アクセント：水彩画風のピンク */
-  --accent-color: #D9A8D4;
-
-  /* ホバー時：少し濃いピンク */
-  --accent-hover: #B77FB5;
-
-  /* 背景：淡いラベンダーホワイト */
-  --bg-color: #F8F5FC;
-
-  /* カード・便箋：柔らかな白 */
-  --card-bg: #FFFEFF;
-
-  /* 本文：青みを帯びたダークグレー */
-  --text-color: #3D4257;
-
-  /* 補足：落ち着いたグレーパープル */
-  --text-muted: #73758A;
-
-  /* 境界線：淡いラベンダー */
-  --border-color: #E8DFF1;
-
-  /* 追加カラー */
-  --sky-blue: #A9D8F2;
-  --pastel-pink: #F5C4DA;
-  --lavender: #B8A9E5;
-  --pastel-yellow: #FFE7B3;
-
-  /* フォント */
-  --font-family:
-    "Helvetica Neue",
-    Arial,
-    "Hiragino Kaku Gothic ProN",
-    "Hiragino Sans",
-    Meiryo,
-    sans-serif;
-
+  --primary-color: #7DADE2;       /* ダークネイビー（ヘッダー・重厚感） */
+  --accent-color: #D9A8D4;        /* ゴールド・ブロンズ（アクセント） */
+  --accent-hover: #b0843a;
+  --bg-color: #F8F5FC;            /* 背景色（オフホワイト） */
+  --card-bg: #ffffff;             /* カード背景 */
+  --text-color: #333333;          /* 本文テキスト */
+  --text-muted: #666666;          /* 補足テキスト */
+  --border-color: #e2e8f0;        /* 境界線 */
+  --font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", MeiRyo, sans-serif;
   --max-width: 1000px;
 }
-
 
 * {
   box-sizing: border-box;
@@ -54,28 +22,13 @@
   padding: 0;
 }
 
-
 body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
   color: var(--text-color);
-  background:
-    radial-gradient(
-      ellipse at 10% 85%,
-      rgba(245, 196, 218, 0.35),
-      transparent 55%
-    ),
-    radial-gradient(
-      ellipse at 90% 75%,
-      rgba(169, 216, 242, 0.40),
-      transparent 55%
-    ),
-    radial-gradient(
-      ellipse at 50% 40%,
-      rgba(184, 169, 229, 0.18),
-      transparent 65%
-    ),
-    var(--bg-color);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
-
 
 img {
   max-width: 100%;
@@ -94,3 +47,50 @@ a:hover {
 }
 
 .container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ==========================================
+   2. ヘッダー & ナビゲーション
+   ========================================== */
+.header {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.header-container {
+  width: 92%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.site-title a {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 20px;
+}
+
+/* style.css に追加・調整 */
+.nav-list a {
+  color: #d1d5db;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
