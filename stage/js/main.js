@@ -1,6 +1,30 @@
 /* ==========================================
    main.js - 公演紹介ホームページ用スクリプト
    ========================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const button = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".global-nav");
+
+  if (!button || !nav) return;
+
+  button.addEventListener("click", () => {
+    const open = nav.classList.toggle("is-open");
+    button.setAttribute("aria-expanded", String(open));
+    button.setAttribute(
+      "aria-label",
+      open ? "メニューを閉じる" : "メニューを開く"
+    );
+  });
+
+  nav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("is-open");
+      button.setAttribute("aria-expanded", "false");
+      button.setAttribute("aria-label", "メニューを開く");
+    });
+  });
+});
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
