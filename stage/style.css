@@ -493,3 +493,117 @@ a:hover {
     text-align: center;
   }
 }
+
+/* ===== MUSIC SETLIST ===== */
+
+.music-section {
+  padding: 70px 0 100px;
+}
+
+.music-section .subsection-title {
+  text-align: center;
+  font-size: 2rem;
+  letter-spacing: 0.12em;
+  margin-bottom: 45px;
+}
+
+/* 2列のカード配置 */
+.music-list-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+/* カード本体 */
+.music-card {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 28px 30px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+.music-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.09);
+}
+
+/* カード見出し */
+.music-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 18px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.music-card .track-title {
+  margin: 0;
+  padding: 8px 14px;
+  background: #20364b;
+  color: #ffffff;
+  border-radius: 5px;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+.track-label {
+  color: #999999;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+}
+
+/* 担当者情報 */
+.music-card .track-credits {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr);
+  gap: 14px 18px;
+  margin: 0;
+  align-items: baseline;
+}
+
+.music-card .track-credits dt {
+  color: #777777;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.music-card .track-credits dd {
+  margin: 0;
+  color: #222222;
+  font-size: 0.95rem;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+/* スマートフォン対応 */
+@media (max-width: 768px) {
+  .music-section {
+    padding: 45px 0 70px;
+  }
+
+  .music-list-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .music-card {
+    padding: 22px 20px;
+  }
+
+  .music-card .track-credits {
+    grid-template-columns: 85px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .music-section .subsection-title {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
+}
+
