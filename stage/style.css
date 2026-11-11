@@ -1105,3 +1105,51 @@ body:not(.music-page) .ticket-details dd {color:var(--chalk-white);}
     line-height: 1.4;
   }
 }
+
+/* ==========================================
+   CAST：縦長ポートレート写真
+   ========================================== */
+
+.cast-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  background-color: #e5e7eb;
+  margin-bottom: 12px;
+}
+
+.cast-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* キャストカードの幅 */
+.cast-grid {
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(200px, 1fr)
+  );
+  gap: 25px;
+}
+
+/* スマホでも縦長写真を維持 */
+@media (max-width: 768px) {
+  .cast-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .cast-img {
+    height: auto;
+    aspect-ratio: 2 / 3;
+  }
+
+  .cast-card {
+    padding-bottom: 12px;
+  }
+}
+
