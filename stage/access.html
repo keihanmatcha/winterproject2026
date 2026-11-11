@@ -9,22 +9,39 @@
 <body>
 
   <header class="header">
-    <div class="header-container">
-      <h1 class="site-title"><a href="https://www.seiren-musical-project.com/">Seiren Musical Project</a></h1>
-      <nav class="global-nav">
-        <ul class="nav-list">
-          <li><a href="index.html">TOP</a></li>
-          <li><a href="cast-staff.html">CAST & STAFF</a></li>
-          <li><a href="schedule-ticket.html">SCHEDULE & TICKET</a></li>
-          <li><a href="music.html">MUSIC</a></li>
-          <li><a href="access.html" class="active">ACCESS</a></li>
-          <li><a href="qa-attention.html">Q&A / ATTENTION</a></li>
-          <li><a href="index.html#contact" class="btn-contact">CONTACT</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <div class="header-container">
 
+    <!-- PCでのみ表示するサイト名 -->
+    <h1 class="site-title">
+      <a href="index.html">Seiren Musical Project</a>
+    </h1>
+
+    <!-- スマホでのみ表示する☰ボタン -->
+    <button class="menu-toggle"
+            type="button"
+            aria-label="メニューを開く"
+            aria-controls="global-nav"
+            aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- ナビゲーション -->
+    <nav class="global-nav" id="global-nav">
+      <ul class="nav-list">
+        <li><a href="index.html">TOP</a></li>
+        <li><a href="cast-staff.html">CAST & STAFF</a></li>
+        <li><a href="schedule-ticket.html">SCHEDULE & TICKET</a></li>
+        <li><a href="music.html">MUSIC</a></li>
+        <li><a href="access.html">ACCESS</a></li>
+        <li><a href="qa-attention.html">Q&A / ATTENTION</a></li>
+        <li><a href="#contact" class="btn-contact">CONTACT</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
   <main>
     <div class="page-header">
       <div class="container">
