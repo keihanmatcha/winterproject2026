@@ -4,14 +4,14 @@
    1. 基本設定 & 変数
    ========================================== */
 :root {
-  --primary-color: #7DADE2;       /* ダークネイビー（ヘッダー・重厚感） */
-  --accent-color: #D9A8D4;        /* ゴールド・ブロンズ（アクセント） */
-  --accent-hover: #b0843a;
-  --bg-color: #F8F5FC;            /* 背景色（オフホワイト） */
-  --card-bg: #ffffff;             /* カード背景 */
-  --text-color: #333333;          /* 本文テキスト */
-  --text-muted: #666666;          /* 補足テキスト */
-  --border-color: #e2e8f0;        /* 境界線 */
+  --primary-color: #7DADE2;
+  --accent-color: #D9A8D4;
+  --accent-hover: #B77FB5;
+  --bg-color: #F8F5FC;
+  --card-bg: #FFFEFF;
+  --text-color: #3D4257;
+  --text-muted: #73758A;
+  --border-color: #E8DFF1;
   --font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", MeiRyo, sans-serif;
   --max-width: 1000px;
 }
