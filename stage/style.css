@@ -319,6 +319,17 @@ a:hover {
 }
 
 /* --- スタッフ一覧 (STAFF) --- */
+/* 役職名 */
+.staff-section .staff-list dt {
+  font-weight: 700;
+  color: inherit;
+}
+
+/* 担当者名 */
+.staff-section .staff-list dd {
+  font-weight: 400;
+}
+
 .staff-group {
   margin-bottom: 35px;
 }
