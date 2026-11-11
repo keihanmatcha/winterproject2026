@@ -54,13 +54,28 @@
   padding: 0;
 }
 
+
 body {
-  font-family: var(--font-family);
-  background-color: var(--bg-color);
   color: var(--text-color);
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
+  background:
+    radial-gradient(
+      ellipse at 10% 85%,
+      rgba(245, 196, 218, 0.35),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 90% 75%,
+      rgba(169, 216, 242, 0.40),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 50% 40%,
+      rgba(184, 169, 229, 0.18),
+      transparent 65%
+    ),
+    var(--bg-color);
 }
+
 
 img {
   max-width: 100%;
