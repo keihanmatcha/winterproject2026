@@ -3,18 +3,50 @@
 /* ==========================================
    1. 基本設定 & 変数
    ========================================== */
+
 :root {
-  --primary-color: #1a2530;       /* ダークネイビー（ヘッダー・重厚感） */
-  --accent-color: #c99c52;        /* ゴールド・ブロンズ（アクセント） */
-  --accent-hover: #b0843a;
-  --bg-color: #fcfcfc;            /* 背景色（オフホワイト） */
-  --card-bg: #ffffff;             /* カード背景 */
-  --text-color: #333333;          /* 本文テキスト */
-  --text-muted: #666666;          /* 補足テキスト */
-  --border-color: #e2e8f0;        /* 境界線 */
-  --font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", MeiRyo, sans-serif;
+  /* メインカラー：明るい青空 */
+  --primary-color: #7DADE2;
+
+  /* アクセント：水彩画風のピンク */
+  --accent-color: #D9A8D4;
+
+  /* ホバー時：少し濃いピンク */
+  --accent-hover: #B77FB5;
+
+  /* 背景：淡いラベンダーホワイト */
+  --bg-color: #F8F5FC;
+
+  /* カード・便箋：柔らかな白 */
+  --card-bg: #FFFEFF;
+
+  /* 本文：青みを帯びたダークグレー */
+  --text-color: #3D4257;
+
+  /* 補足：落ち着いたグレーパープル */
+  --text-muted: #73758A;
+
+  /* 境界線：淡いラベンダー */
+  --border-color: #E8DFF1;
+
+  /* 追加カラー */
+  --sky-blue: #A9D8F2;
+  --pastel-pink: #F5C4DA;
+  --lavender: #B8A9E5;
+  --pastel-yellow: #FFE7B3;
+
+  /* フォント */
+  --font-family:
+    "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+
   --max-width: 1000px;
 }
+
 
 * {
   box-sizing: border-box;
