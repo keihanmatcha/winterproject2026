@@ -1,96 +1,108 @@
-@charset "UTF-8";
-
-/* ==========================================
-   1. 基本設定 & 変数
+   TOP: vertical poster + soft pastel margins
+   No curtains, feathers, or decorative particles.
    ========================================== */
-:root {
-  --primary-color: #7DADE2;
-  --accent-color: #D9A8D4;
-  --accent-hover: #B77FB5;
-  --bg-color: #F8F5FC;
-  --card-bg: #FFFEFF;
-  --text-color: #3D4257;
-  --text-muted: #73758A;
-  --border-color: #E8DFF1;
-  --font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", MeiRyo, sans-serif;
-  --max-width: 1000px;
+.hero.hero-poster-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100svh;
+  padding: 28px 24px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 62% 60% at 0% 100%, rgba(249, 207, 225, .62), transparent 90%),
+    radial-gradient(ellipse 65% 65% at 100% 100%, rgba(190, 216, 250, .72), transparent 90%),
+    linear-gradient(180deg, #fdfbfd 0%, #f6f2fb 48%, #eeeafa 100%);
 }
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+.hero.hero-poster-section .hero-poster-frame {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 560px);
+  display: flex;
+  justify-content: center;
 }
-
-body {
-  font-family: var(--font-family);
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-}
-
-img {
+.hero.hero-poster-section .hero-poster {
+  display: block;
+  width: auto;
   max-width: 100%;
   height: auto;
-  vertical-align: bottom;
+  max-height: min(88svh, 950px);
+  object-fit: contain;
+  filter: drop-shadow(0 8px 20px rgba(90,90,130,.10));
+  animation: topPosterFadeIn 1.4s ease-out both;
+}
+@keyframes topPosterFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 768px) {
+  .hero.hero-poster-section {
+    min-height: 0;
+    padding: 16px 12px;
+  }
+  .hero.hero-poster-section .hero-poster-frame { width: 100%; }
+  .hero.hero-poster-section .hero-poster {
+    width: 100%;
+    max-height: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero.hero-poster-section .hero-poster { animation: none; }
 }
 
-a {
-  color: var(--primary-color);
-  text-decoration: none;
-  transition: opacity 0.3s ease, color 0.3s ease;
+/* ===================================================
+   水彩画カラーの追加調整（②のレイアウトを変更しない）
+   =================================================== */
+body:not(.music-page) {
+  background:
+    radial-gradient(ellipse at 9% 72%, rgba(245,196,218,.28), transparent 57%),
+    radial-gradient(ellipse at 93% 42%, rgba(169,216,242,.32), transparent 57%),
+    radial-gradient(ellipse at 50% 12%, rgba(184,169,229,.16), transparent 65%),
+    var(--bg-color);
 }
-
-a:hover {
-  opacity: 0.8;
-}
-
-.container {
-  width: 90%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-
-/* ==========================================
-   2. ヘッダー & ナビゲーション
-   ========================================== */
 .header {
-  background-color: var(--primary-color);
-  color: #ffffff;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  background:rgba(248,245,252,.95);
+  color:var(--text-color);
+  border-bottom:1px solid var(--border-color);
+  box-shadow:0 2px 12px rgba(93,105,147,.09);
 }
-
-.header-container {
-  width: 92%;
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 0;
+.site-title a,.nav-list a { color:#526b93; }
+.nav-list a:hover,.nav-list a.active { color:#a36a9f; }
+.nav-list a.btn-contact { color:#3D4257!important; }
+.page-header {
+  background:linear-gradient(110deg,#dceafa,#f7e3ee 55%,#e8e0f7);
+  color:#3D4257;
 }
-
-.site-title a {
-  color: #ffffff;
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 1px;
+.page-header h2 .en { color:#5d76a4; }
+.section-title .en,.subsection-title { color:#5d76a4; }
+.section-title .ja { color:#a36a9f; }
+/* 紙の質感だけ追加。width / display / grid / padding は変更しない */
+body:not(.music-page) :is(.info-section,.synopsis-section,.creators-section,.outline-section,.contact-section) > .container {
+  background:
+    repeating-linear-gradient(to bottom,transparent 0 37px,rgba(166,185,221,.10) 38px 39px),
+    rgba(255,255,255,.80);
+  border:1px solid rgba(232,223,241,.85);
+  border-radius:12px;
+  box-shadow:0 10px 28px rgba(87,94,139,.08);
 }
-
-.nav-list {
-  display: flex;
-  list-style: none;
-  align-items: center;
-  gap: 20px;
+/* コンテンツの余白は元のセクション構造を保ったまま、内側だけ確保 */
+body:not(.music-page) :is(.info-section,.synopsis-section,.creators-section,.outline-section,.contact-section) > .container {
+  padding:clamp(22px,4vw,42px);
 }
-
-/* style.css に追加・調整 */
-.nav-list a {
-  color: #d1d5db;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+.creator-list,.outline-list,.ticket-details,.cast-card {
+  border:1px solid rgba(216,204,235,.65);
+  box-shadow:0 5px 18px rgba(90,102,150,.07);
+}
+.link-btn { color:#34445d; border-radius:999px; }
+.timetable th { color:#30445e; }
+.ticket-caution,.attention-box { background:rgba(255,251,255,.85);border:1px solid var(--border-color); }
+.footer {
+  background:linear-gradient(110deg,#dceafa,#f6dce9 52%,#e8e0f7);
+  color:#4e5b77;
+}
+.footer-nav { border-bottom-color:rgba(90,98,140,.16); }
+.footer-nav a,.copyright { color:#52617e; }
+.footer-nav a:hover { color:#a36a9f; }
+@media(max-width:768px) {
+  body:not(.music-page) :is(.info-section,.synopsis-section,.creators-section,.outline-section,.contact-section) > .container { padding:22px 18px; }
+}
