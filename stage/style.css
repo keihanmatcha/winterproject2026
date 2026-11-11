@@ -1033,3 +1033,75 @@ body:not(.music-page) .ticket-details dd {color:var(--chalk-white);}
     width: 100%;
   }
 }
+
+/* OTHER CAST：期別キャスト一覧 */
+
+.other-cast {
+  margin-top: 55px;
+}
+
+.other-cast-title {
+  text-align: center;
+  font-family: "Yu Mincho", serif;
+  font-size: 1.7rem;
+  color: #244a3e;
+  margin-bottom: 35px;
+  letter-spacing: .12em;
+}
+
+.other-cast-title span {
+  display: block;
+  font-family: var(--font-family);
+  font-size: .85rem;
+  font-weight: 400;
+  letter-spacing: normal;
+  margin-top: 5px;
+}
+
+.cast-generation {
+  margin-bottom: 30px;
+  background: #fffdf7;
+  border: 2px solid #aa8154;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.generation-title {
+  background: linear-gradient(110deg, #244a3e, #17382f);
+  color: #f5f1df;
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  text-align: center;
+  letter-spacing: .1em;
+}
+
+/* 期別キャスト一覧：PCでは横10列 */
+.generation-names {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 15px 6px;
+  list-style: none;
+  padding: 25px 12px;
+}
+
+.generation-names li {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #3d4257;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+}
+
+/* スマホでは横5列 */
+@media (max-width: 768px) {
+  .generation-names {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px 4px;
+    padding: 18px 8px;
+  }
+
+  .generation-names li {
+    font-size: 0.7rem;
+    line-height: 1.4;
+  }
+}
