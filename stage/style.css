@@ -1421,3 +1421,94 @@ body:not(.music-page) .ticket-details dd {color:var(--chalk-white);}
 .cast-section .duo-board > .character-profile:nth-child(1) .character-note :is(h4,p) { color: #49375B; }
 .cast-section .duo-board > .character-profile:nth-child(2) .character-note :is(h4,p) { color: #293B68; }
 .cast-section .fairies-board .character-note :is(h4,p) { color: #423D39; }
+
+
+/* ==========================================
+   MUSIC：ページ上部を黒板風に統一
+   ========================================== */
+
+body.music-page .page-header.music-page-header {
+  background:
+    repeating-linear-gradient(
+      5deg,
+      rgba(255,255,255,.018) 0 2px,
+      transparent 2px 14px
+    ),
+    linear-gradient(
+      120deg,
+      #244a3e,
+      #17382f
+    );
+
+  color: #f5f1df;
+
+  padding: 54px 0 48px;
+  margin-bottom: 40px;
+
+  border-bottom: 8px solid #aa8154;
+
+  box-shadow:
+    inset 0 -2px rgba(255,255,255,.1),
+    0 7px 17px rgba(25,49,38,.13);
+
+  text-align: center;
+}
+
+/* MUSIC：英語タイトル */
+body.music-page .music-page-header h2 .en {
+  display: block;
+
+  color: #f5f1df;
+
+  font-family:
+    "Yu Mincho",
+    "Hiragino Mincho ProN",
+    "Shippori Mincho",
+    serif;
+
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: .13em;
+
+  text-shadow: 1px 1px 1px rgba(255,255,255,.2);
+}
+
+/* MUSIC：日本語タイトル */
+body.music-page .music-page-header h2 .ja {
+  display: block;
+
+  color: #f3dda0;
+
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: .12em;
+
+  margin-top: 12px;
+  opacity: 1;
+}
+
+/* MUSIC：タイトル下の説明文がある場合 */
+body.music-page .music-page-header .music-lead {
+  color: #f5f1df;
+  margin-top: 18px;
+  line-height: 1.8;
+}
+
+/* スマートフォン */
+@media (max-width: 768px) {
+  body.music-page .page-header.music-page-header {
+    padding: 32px 0 30px;
+    margin-bottom: 24px;
+    border-bottom-width: 5px;
+  }
+
+  body.music-page .music-page-header h2 .en {
+    font-size: 1.65rem;
+  }
+
+  body.music-page .music-page-header h2 .ja {
+    font-size: .85rem;
+    margin-top: 8px;
+  }
+}
+
