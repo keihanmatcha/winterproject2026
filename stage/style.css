@@ -1138,6 +1138,9 @@ body:not(.music-page) .ticket-details dd {color:var(--chalk-white);}
 
 /* スマホでも縦長写真を維持 */
 @media (max-width: 768px) {
+  .character-photo {
+  width: min(100%, 250px);
+  }
   .cast-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
@@ -1151,5 +1154,204 @@ body:not(.music-page) .ticket-details dd {color:var(--chalk-white);}
   .cast-card {
     padding-bottom: 12px;
   }
+}
+/* ==========================================
+   CHARACTER PROFILE
+   黒板 × 写真 × 付箋
+   ========================================== */
+
+.character-board {
+  background:
+    repeating-linear-gradient(
+      4deg,
+      rgba(255,255,255,.018) 0 2px,
+      transparent 2px 13px
+    ),
+    linear-gradient(125deg, #244a3e, #17382f);
+
+  border: 9px solid #aa8154;
+  border-radius: 8px;
+  padding: 45px 35px;
+  box-shadow: 0 14px 30px rgba(36,53,45,.18);
+}
+
+/* キャラクターごとの配置 */
+
+/* ==========================================
+   楕円形のキャラクター紹介吹き出し
+   ========================================== */
+
+.character-profile {
+  display: grid;
+  grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
+  align-items: center;
+  gap: 35px;
+  margin-bottom: 65px;
+}
+
+.character-profile:last-child {
+  margin-bottom: 0;
+}
+
+/* 楕円形の吹き出し */
+.character-note {
+  position: relative;
+  width: 100%;
+  min-height: 260px;
+  padding: 55px 55px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: #fff2bd;
+  color: #514735;
+
+  border-radius: 50%;
+  transform: rotate(-2deg);
+
+  box-shadow: 6px 9px 18px rgba(0,0,0,.22);
+  text-align: center;
+}
+
+/* 写真側に向かう吹き出しの先端 */
+.character-note::before {
+  content: "";
+  position: absolute;
+
+  left: -25px;
+  top: 48%;
+
+  width: 65px;
+  height: 45px;
+
+  background: #fff2bd;
+
+  border: none;
+  clip-path: polygon(0 55%, 100% 0, 100% 100%);
+  transform: rotate(-8deg);
+}
+.character-note {
+  isolation: isolate;
+}
+
+.character-note::before {
+  z-index: -1;
+}
+
+/* 紹介タイトル */
+.character-note h4 {
+  font-size: 1.15rem;
+  color: #66523b;
+  margin-bottom: 12px;
+  padding: 0;
+  border: none;
+}
+
+/* 紹介文 */
+.character-note p {
+  font-size: .95rem;
+  line-height: 1.8;
+  color: #514735;
+  max-width: 360px;
+}
+
+/* 付箋のピンは非表示 */
+.note-pin {
+  display: none;
+}
+
+/* ==========================================
+   スマホ表示
+   ========================================== */
+
+@media (max-width: 768px) {
+
+  .character-profile {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .character-note {
+    width: 100%;
+    min-height: 220px;
+    padding: 45px 38px;
+    border-radius: 50%;
+    transform: rotate(0deg);
+  }
+
+  /* スマホでは写真に向かって上向き */
+  .character-note::before {
+    left: 50%;
+    top: -26px;
+    width: 45px;
+    height: 50px;
+    transform: translateX(-50%);
+
+    border: none;
+    clip-path: polygon(50% 0, 0 100%, 100% 100%);
+  }
+
+  .character-note h4 {
+    font-size: 1rem;
+  }
+
+  .character-note p {
+    font-size: .82rem;
+    line-height: 1.65;
+  }
+}
+/* 黒板に貼られたキャラクター写真 */
+.character-photo {
+  position: relative;
+  width: 100%;
+  background: #fffdf7;
+  padding: 10px 10px 18px;
+  box-shadow: 5px 8px 16px rgba(0,0,0,.3);
+  transform: rotate(-2deg);
+}
+
+.character-profile:nth-child(even) .character-photo {
+  transform: rotate(2deg);
+}
+
+.character-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* 写真を貼り付けるテープ */
+.photo-tape {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-5deg);
+  width: 85px;
+  height: 26px;
+  background: rgba(244,224,173,.78);
+  box-shadow: 0 1px 3px rgba(0,0,0,.12);
+  z-index: 2;
+}
+
+/* 写真の下の名前 */
+.character-photo-caption {
+  text-align: center;
+  padding-top: 12px;
+}
+
+.character-photo-caption h4 {
+  color: #244a3e;
+  font-size: 1.2rem;
+}
+
+.character-photo-caption p {
+  color: #66716a;
+  font-size: .85rem;
+  margin-top: 3px;
 }
 
