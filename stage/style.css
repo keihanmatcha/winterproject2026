@@ -1285,3 +1285,105 @@ body:not(.music-page) .ticket-details dd {color:var(--chalk-white);}
   .character-note h4 { font-size: 1rem; }
   .character-note p { font-size: .82rem; line-height: 1.65; }
 }
+
+
+/* ==============================================
+   CAST: group portraits + overlapping Post-it notes
+   ============================================== */
+.cast-section .character-board {
+  display: grid;
+  gap: 32px 22px;
+  align-items: start;
+  padding: 36px 28px;
+}
+.cast-section .duo-board { grid-template-columns: repeat(2, minmax(0,1fr)); }
+.cast-section .fairies-board { grid-template-columns: repeat(6,minmax(0,1fr)); }
+.cast-section .fairies-board > .character-profile { grid-column: span 2; }
+.cast-section .fairies-board > .character-profile:nth-child(-n+2) { grid-column: span 3; }
+.cast-section .character-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  min-width: 0;
+  margin: 0;
+}
+.cast-section .character-photo {
+  width: min(100%, 260px);
+  flex: none;
+  transform: rotate(-1.5deg);
+}
+.cast-section .character-profile:nth-child(even) .character-photo { transform: rotate(1.5deg); }
+.cast-section .character-note {
+  position: relative;
+  z-index: 2;
+  isolation: auto;
+  display: block;
+  width: min(100%, 330px);
+  min-height: 0;
+  margin: -20px auto 0;
+  padding: 22px 20px 25px;
+  border-radius: 3px 14px 5px 8px;
+  background: #fff1ae;
+  color: #514735;
+  text-align: left;
+  transform: rotate(1.5deg);
+  box-shadow: 3px 7px 14px rgba(0,0,0,.23);
+}
+.cast-section .character-note::before { content: none; }
+.cast-section .character-profile:nth-child(5n+2) .character-note { background: #f9d9e5; transform: rotate(-1deg); }
+.cast-section .character-profile:nth-child(5n+3) .character-note { background: #dcefcf; }
+.cast-section .character-profile:nth-child(5n+4) .character-note { background: #d9eafb; transform: rotate(-1.5deg); }
+.cast-section .character-profile:nth-child(5n+5) .character-note { background: #ffe0c5; }
+.cast-section .character-note h4,
+.cast-section .character-note p,
+.cast-section .character-photo-caption h4,
+.cast-section .fairies-intro { font-family: 'Yomogi','Hiragino Maru Gothic ProN','Yu Gothic',sans-serif; }
+.cast-section .character-note h4 { font-size: 1.1rem; margin: 0 0 10px; text-align: center; }
+.cast-section .character-note p { font-size: .87rem; line-height: 1.7; overflow-wrap: anywhere; }
+.cast-section .fairies-board-heading {
+  max-width: 850px;
+  margin: 44px auto 24px;
+  padding: 28px 26px;
+  text-align: center;
+  background: linear-gradient(125deg,#244a3e,#17382f);
+  border: 8px solid #aa8154;
+  border-radius: 7px;
+  box-shadow: 0 9px 23px rgba(0,0,0,.14);
+}
+.cast-section .fairies-intro h3 { color:#f5f1df; font-size:clamp(1.25rem,2.5vw,1.85rem); margin-bottom:8px; }
+.cast-section .fairies-subtitle { color:#f3dda0; margin-bottom:12px; letter-spacing:.12em; }
+.cast-section .fairies-description { color:#f5f1df; line-height:1.9; }
+@media (max-width: 768px) {
+  .cast-section .character-board { padding: 26px 15px; gap: 26px 12px; }
+  .cast-section .duo-board { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .cast-section .fairies-board { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .cast-section .fairies-board > .character-profile,
+  .cast-section .fairies-board > .character-profile:nth-child(-n+2) { grid-column: auto; }
+  .cast-section .fairies-board > .character-profile:last-child:nth-child(odd) { grid-column: 1 / -1; width: min(100%,280px); justify-self: center; }
+  .cast-section .character-photo { width:100%; }
+  .cast-section .character-note { width:100%; padding: 15px 11px 18px; margin-top:-10px; }
+  .cast-section .character-note h4 { font-size: .98rem; }
+  .cast-section .character-note p { font-size: .77rem; line-height:1.6; }
+  .cast-section .fairies-board-heading { margin: 32px auto 18px; padding:22px 16px; border-width:5px; }
+}
+@media (max-width: 480px) {
+  .cast-section .duo-board, .cast-section .fairies-board { grid-template-columns:1fr; }
+  .cast-section .fairies-board > .character-profile:last-child:nth-child(odd) { grid-column:auto; }
+  .cast-section .character-profile { width: min(100%,350px); justify-self:center; }
+  .cast-section .character-photo { width:min(100%,250px); }
+  .cast-section .character-note { width:min(100%,310px); padding:20px 18px; }
+  .cast-section .character-note p { font-size:.88rem; }
+}
+
+/* CAST: character-specific Post-it colors (override generic nth-child colors) */
+.cast-section .duo-board > .character-profile:nth-child(1) .character-note { background: #E5D4F5; color: #49375B; }
+.cast-section .duo-board > .character-profile:nth-child(2) .character-note { background: #C5D0F1; color: #293B68; }
+.cast-section .fairies-board > .character-profile:nth-child(1) .character-note { background: #FFF0A6; color: #423D39; }
+.cast-section .fairies-board > .character-profile:nth-child(2) .character-note { background: #FFD5AC; color: #423D39; }
+.cast-section .fairies-board > .character-profile:nth-child(3) .character-note { background: #CDECCB; color: #423D39; }
+.cast-section .fairies-board > .character-profile:nth-child(4) .character-note { background: #F9CFE0; color: #423D39; }
+.cast-section .fairies-board > .character-profile:nth-child(5) .character-note { background: #CBE5FA; color: #423D39; }
+.cast-section .duo-board > .character-profile:nth-child(1) .character-note :is(h4,p) { color: #49375B; }
+.cast-section .duo-board > .character-profile:nth-child(2) .character-note :is(h4,p) { color: #293B68; }
+.cast-section .fairies-board .character-note :is(h4,p) { color: #423D39; }
